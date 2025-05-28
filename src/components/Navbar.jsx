@@ -20,7 +20,7 @@ import {
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showProfileMenu, setShowProfileMenu] = useState(false);
-  const { isDark, toggleTheme } = useTheme();
+  const { theme, toggleTheme } = useTheme();
   const router = useRouter();
   const dispatch = useDispatch();
 
@@ -29,6 +29,8 @@ export default function Navbar() {
     dispatch(logout());
     router.push('/');
   };
+
+  console.log("theme",theme)
 
   return (
     <nav className="bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl border-b border-gray-200/50 dark:border-gray-700/50 sticky top-0 z-50">
@@ -63,7 +65,7 @@ export default function Navbar() {
               className="p-2 text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-300 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800"
               aria-label="Toggle dark mode"
             >
-              {isDark ? (
+              {theme == 'dark' ? (
                 <Sun className="w-5 h-5 rotate-0 scale-100 transition-all duration-300" />
               ) : (
                 <Moon className="w-5 h-5 rotate-0 scale-100 transition-all duration-300" />
@@ -132,8 +134,8 @@ export default function Navbar() {
               className="w-full flex items-center justify-between p-3 text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800"
             >
               <span className="flex items-center space-x-3">
-                {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
-                <span>{isDark ? 'Light Mode' : 'Dark Mode'}</span>
+                {theme == 'light' ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+                <span>{theme == 'light' ? 'Light Mode' : 'Dark Mode'}</span>
               </span>
             </button>
 
