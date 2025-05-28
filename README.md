@@ -20,6 +20,11 @@ This is a **Next.js** admin panel project styled with **Tailwind CSS**. It fetch
 
 ---
 
+login Credentials
+
+- Email: `eve.holt@reqres.in`
+- Password: `cityslicka`
+
 ## 📦 Tech Stack
 
 - **Next.js 14 (App Router)**
