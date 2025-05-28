@@ -30,8 +30,6 @@ export default function Navbar() {
     router.push('/');
   };
 
-  console.log("theme",theme)
-
   return (
     <nav className="bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl border-b border-gray-200/50 dark:border-gray-700/50 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -171,17 +169,6 @@ export default function Navbar() {
           </div>
         </div>
       )}
-
-      {/* Overlay for mobile menu */}
-    {(isMenuOpen || showProfileMenu) && (
-      <div
-        className="fixed inset-0 z-40 bg-white/20 md:hidden dark:bg-gray-900/20"
-        onClick={() => {
-          setIsMenuOpen(false);
-          setShowProfileMenu(false);
-        }}
-      />
-    )}
     </nav>
   );
 }
