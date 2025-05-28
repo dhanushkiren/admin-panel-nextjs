@@ -126,7 +126,7 @@ export default function Navbar() {
 
       {/* Mobile Navigation Menu */}
       {isMenuOpen && (
-        <div className="md:hidden z-index-50 border-t border-gray-200 dark:border-gray-700 bg-white/95 dark:bg-gray-900/95 backdrop-blur-xl">
+        <div className="md:hidden z-50 border-t border-gray-200 dark:border-gray-700 bg-white/95 dark:bg-gray-900/95 backdrop-blur-xl">
           <div className="px-4 py-4 space-y-3">
             {/* Dark Mode Toggle */}
             <button
@@ -173,15 +173,15 @@ export default function Navbar() {
       )}
 
       {/* Overlay for mobile menu */}
-      {(isMenuOpen || showProfileMenu) && (
-        <div
-          className="fixed inset-0 bg-white/20 md:hidden text-gray-900 dark:bg-gray-900/20 text-white"
-          onClick={() => {
-            setIsMenuOpen(false);
-            setShowProfileMenu(false);
-          }}
-        />
-      )}
+    {(isMenuOpen || showProfileMenu) && (
+      <div
+        className="fixed inset-0 z-40 bg-white/20 md:hidden dark:bg-gray-900/20"
+        onClick={() => {
+          setIsMenuOpen(false);
+          setShowProfileMenu(false);
+        }}
+      />
+    )}
     </nav>
   );
 }
