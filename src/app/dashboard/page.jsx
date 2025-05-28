@@ -259,6 +259,14 @@ export default function Dashboard() {
                 : 'There are no users to display at the moment.'
               }
             </p>
+            <button
+              disabled={page === 1}
+              onClick={() => setPage(p => Math.max(p - 1, 1))}
+              className="flex items-center space-x-2 px-4 py-2 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-50 dark:hover:bg-gray-700 transition-all duration-200 shadow-md hover:shadow-lg"
+            >
+              <ChevronLeft className="w-4 h-4" />
+              <span className="text-gray-900 dark:text-white">Previous</span>
+            </button>
             {searchTerm && (
               <button
                 onClick={() => setSearchTerm('')}
